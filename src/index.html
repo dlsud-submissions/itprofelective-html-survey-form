@@ -7,15 +7,92 @@
   </head>
   <body>
     <form action="" class="form-container" method="post">
-      <!-- Use labels and input types to catch name, age and email -->
+      <fieldset>
+        <legend>BASIC INFORMATION</legend>
 
-      <!-- Use radio buttons for gender -->
+        <!-- Use labels and input types to catch name, age and email -->
+        <label for="full-name" class="label-text">Full Name:</label>
+        <input type="text" class="input-text" id="full-name" name="full-name" />
 
-      <!-- Use dropdown list for satisfaction unsatisfactory -> satisfactory -->
+        <br />
 
-      <!-- Use textarea for feedback block -->
+        <label for="age" class="label-text">Age:</label>
+        <input type="number" class="input-number" id="age" name="age" />
+
+        <br />
+
+        <label for="email" class="label-text">Email Address:</label>
+        <input type="email" class="input-email" id="email" name="email" />
+
+        <br />
+      </fieldset>
+
+      <br />
+
+      <fieldset>
+        <legend>GENDER</legend>
+
+        <!-- Use radio buttons for gender -->
+        <label for="male" class="label-text">Male</label>
+        <input
+          type="radio"
+          class="input-radio"
+          id="male"
+          name="gender"
+          value="male"
+        />
+
+        <label for="female" class="label-text">Female</label>
+        <input
+          type="radio"
+          class="input-radio"
+          id="female"
+          name="gender"
+          value="female"
+        />
+      </fieldset>
+
+      <br />
+
+      <fieldset>
+        <legend>RESPONSE</legend>
+        <!-- Use dropdown list for satisfaction unsatisfactory -> satisfactory -->
+        <label for="satisfaction" class="label-text">Satisfaction Level:</label>
+        <select
+          name="satisfaction"
+          id="satisfaction"
+          class="satifaction-levels-container"
+        >
+          <option value="very-unsatisfied" class="satisfaction-level">
+            Very Unsatisfied
+          </option>
+          <option value="unsatisfied" class="satisfaction-level">
+            Unsatisfied
+          </option>
+          <option value="satisfied" class="satisfaction-level">
+            Satisfied
+          </option>
+          <option value="very-satisfied" class="satisfaction-level">
+            Very Satisfied
+          </option>
+        </select>
+
+        <br />
+
+        <!-- Use textarea for feedback block -->
+        <label for="feedback" class="label-text">Feedback:</label>
+        <textarea
+          name="feedback"
+          id="feedback"
+          class="input-textarea"
+        ></textarea>
+      </fieldset>
+
+      <br />
 
       <!-- Submit and Reset buttons -->
+      <button type="submit" class="button submit-button">Submit</button>
+      <button type="reset" class="button reset-button">Reset</button>
     </form>
   </body>
 </html>
