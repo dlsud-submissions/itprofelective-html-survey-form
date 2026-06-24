@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="site-header__brand">
+          <span class="site-header__badge" aria-hidden="true">SF</span>
+          <h1 class="site-title">itprofelective-html-survey-form</h1>
+        </div>
+        <div class="site-header__meta" aria-label="Survey details">
+          <span class="site-header__meta-item">Takes ~2 minutes</span>
+          <span class="site-header__meta-dot" aria-hidden="true">•</span>
+          <span class="site-header__meta-item">Your feedback matters</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <form
+        action="YOUR_DEPLOYED_WEB_APP_URL"
+        class="form-container"
+        method="post"
+      >
+        <fieldset>
+          <legend>Basic Information</legend>
+
+          <label for="full-name" class="label-text">Full Name</label>
+          <input
+            type="text"
+            class="input-text"
+            id="full-name"
+            name="full-name"
+            placeholder="e.g. Juan dela Cruz"
+          />
+
+          <label for="age" class="label-text">Age</label>
+          <input
+            type="number"
+            class="input-number"
+            id="age"
+            name="age"
+            placeholder="18"
+            min="1"
+            max="120"
+          />
+
+          <label for="email" class="label-text">Email Address</label>
+          <input
+            type="email"
+            class="input-email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Gender</legend>
+
+          <label for="male" class="label-text">
+            <input
+              type="radio"
+              class="input-radio"
+              id="male"
+              name="gender"
+              value="male"
+            />
+            Male
+          </label>
+
+          <label for="female" class="label-text">
+            <input
+              type="radio"
+              class="input-radio"
+              id="female"
+              name="gender"
+              value="female"
+            />
+            Female
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Interests</legend>
+
+          <label class="label-text">
+            <input
+              type="checkbox"
+              class="input-checkbox"
+              name="interests"
+              value="sports"
+            />
+            Sports
+          </label>
+
+          <label class="label-text">
+            <input
+              type="checkbox"
+              class="input-checkbox"
+              name="interests"
+              value="music"
+            />
+            Music
+          </label>
+
+          <label class="label-text">
+            <input
+              type="checkbox"
+              class="input-checkbox"
+              name="interests"
+              value="movies"
+            />
+            Movies
+          </label>
+
+          <label class="label-text">
+            <input
+              type="checkbox"
+              class="input-checkbox"
+              name="interests"
+              value="gaming"
+            />
+            Gaming
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Response</legend>
+
+          <label for="satisfaction" class="label-text"
+            >Satisfaction Level</label
+          >
+          <select
+            name="satisfaction"
+            id="satisfaction"
+            class="satisfaction-levels-container"
+          >
+            <option value="" disabled selected>Select a level…</option>
+            <option value="very-unsatisfied">Very Unsatisfied</option>
+            <option value="unsatisfied">Unsatisfied</option>
+            <option value="satisfied">Satisfied</option>
+            <option value="very-satisfied">Very Satisfied</option>
+          </select>
+
+          <label for="feedback" class="label-text">Feedback</label>
+          <textarea
+            name="feedback"
+            id="feedback"
+            class="input-textarea"
+            placeholder="Share your thoughts…"
+          ></textarea>
+        </fieldset>
+
+        <div class="button-row">
+          <button type="submit" class="button submit-button">Submit</button>
+          <button type="reset" class="button reset-button">Reset</button>
+        </div>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__text">DLSU-D Submissions</p>
+        <p class="site-footer__small">© 2026 · Built for the survey form</p>
+      </div>
+    </footer>
+  </body>
+</html>

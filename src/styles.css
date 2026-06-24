@@ -1,0 +1,500 @@
+/* ============================================================
+   CSS Reset / Base
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.6;
+  color: #c9d1e0;
+  background-color: #060810;
+  background-image:
+    radial-gradient(
+      ellipse 900px 500px at 10% -5%,
+      rgba(99, 102, 241, 0.22) 0%,
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 700px 400px at 90% 5%,
+      rgba(139, 92, 246, 0.14) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 600px 350px at 50% 100%,
+      rgba(16, 24, 48, 0.9) 0%,
+      transparent 70%
+    );
+  min-height: 100vh;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+img,
+svg {
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* ============================================================
+   Design tokens
+   ============================================================ */
+:root {
+  --accent: #6366f1;
+  --accent-hi: #818cf8;
+  --accent-glow: rgba(99, 102, 241, 0.28);
+  --surface-0: rgba(8, 11, 24, 0.85);
+  --surface-1: rgba(14, 19, 40, 0.72);
+  --surface-2: rgba(22, 28, 55, 0.6);
+  --border: rgba(99, 102, 241, 0.18);
+  --border-focus: rgba(99, 102, 241, 0.65);
+  --text-primary: #e2e8f7;
+  --text-secondary: #8892aa;
+  --text-muted: #505a72;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --shadow-card:
+    0 24px 60px rgba(0, 0, 0, 0.55), 0 8px 20px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 0 3px var(--accent-glow);
+}
+
+/* ============================================================
+   Header
+   ============================================================ */
+.site-header {
+  padding: 36px 24px 24px;
+  position: relative;
+}
+
+.site-header::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(99, 102, 241, 0.4) 40%,
+    rgba(139, 92, 246, 0.3) 60%,
+    transparent 100%
+  );
+}
+
+.site-header__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.site-header__badge {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.85) 0%,
+    rgba(124, 58, 237, 0.55) 100%
+  );
+  border: 1px solid rgba(99, 102, 241, 0.45);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow:
+    0 0 20px rgba(99, 102, 241, 0.35),
+    0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.site-title {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+}
+
+.site-subtitle {
+  margin: 0 0 12px;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.site-header__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.site-header__meta-dot {
+  opacity: 0.5;
+}
+.site-header__meta-item {
+  white-space: nowrap;
+}
+
+/* ============================================================
+   Main
+   ============================================================ */
+.site-main {
+  padding: 32px 24px 56px;
+}
+
+/* ============================================================
+   Form card
+   ============================================================ */
+.form-container {
+  display: block;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 36px 32px;
+  background: var(--surface-0);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* ============================================================
+   Fieldsets
+   ============================================================ */
+form fieldset {
+  margin: 0 0 20px;
+  padding: 22px 20px;
+  background: var(--surface-1);
+  border: 1px solid rgba(99, 102, 241, 0.13);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(6px);
+  transition: border-color 200ms ease;
+}
+
+form fieldset:hover {
+  border-color: rgba(99, 102, 241, 0.24);
+}
+
+form fieldset:last-of-type {
+  margin-bottom: 0;
+}
+
+form legend {
+  padding: 0 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-hi);
+}
+
+/* ============================================================
+   Labels
+   ============================================================ */
+.label-text {
+  display: inline-block;
+  margin: 10px 0 5px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #a8b4cc;
+  letter-spacing: 0.01em;
+}
+
+/* ============================================================
+   Text / number / email inputs & select & textarea
+   ============================================================ */
+.input-text,
+.input-number,
+.input-email,
+.input-textarea,
+.satisfaction-levels-container {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: rgba(12, 16, 34, 0.75);
+  color: var(--text-primary);
+  font-size: 0.925rem;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    background 150ms ease;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input-text::placeholder,
+.input-number::placeholder,
+.input-email::placeholder,
+.input-textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.input-text:hover,
+.input-number:hover,
+.input-email:hover,
+.input-textarea:hover,
+.satisfaction-levels-container:hover {
+  border-color: rgba(99, 102, 241, 0.38);
+  background: rgba(16, 20, 42, 0.85);
+}
+
+.input-text:focus,
+.input-number:focus,
+.input-email:focus,
+.input-textarea:focus,
+.satisfaction-levels-container:focus {
+  border-color: var(--border-focus);
+  background: rgba(16, 20, 42, 0.9);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Custom select chevron */
+.satisfaction-levels-container {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236366f1' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 38px;
+  cursor: pointer;
+}
+
+.satisfaction-levels-container option {
+  background: #0e1328;
+  color: var(--text-primary);
+}
+
+/* Textarea */
+.input-textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   Radio & Checkbox
+   ============================================================ */
+.input-radio,
+.input-checkbox {
+  width: 17px;
+  height: 17px;
+  margin-right: 8px;
+  accent-color: var(--accent);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Gender row */
+fieldset:has(#male) .label-text,
+fieldset:has(#female) .label-text {
+  margin: 0 20px 0 0;
+}
+
+form fieldset > label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #a8b4cc;
+  padding: 6px 14px 6px 0;
+  border-radius: var(--radius-sm);
+  transition: color 140ms;
+}
+
+form fieldset > label:hover {
+  color: var(--text-primary);
+}
+
+/* Interests grid */
+fieldset:has(.input-checkbox) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 0;
+}
+
+fieldset:has(.input-checkbox) legend {
+  grid-column: 1 / -1;
+}
+
+/* ============================================================
+   Dividers between field groups (replaces <br> visual gap)
+   ============================================================ */
+form br {
+  display: none;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.button-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease,
+    background 140ms ease,
+    border-color 140ms ease,
+    opacity 140ms ease;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: #fff;
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 6px 22px rgba(79, 70, 229, 0.35);
+}
+
+.submit-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(99, 102, 241, 0.45);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.reset-button {
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: rgba(99, 102, 241, 0.22);
+}
+
+.reset-button:hover {
+  border-color: rgba(99, 102, 241, 0.45);
+  color: var(--text-primary);
+  background: rgba(99, 102, 241, 0.06);
+}
+
+.reset-button:active {
+  transform: translateY(0);
+}
+
+.button:focus-visible {
+  outline: 3px solid var(--accent-glow);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.site-footer {
+  padding: 20px 24px 36px;
+  border-top: 1px solid rgba(99, 102, 241, 0.1);
+  color: var(--text-muted);
+}
+
+.site-footer__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+
+.site-footer__text {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.site-footer__small {
+  margin: 4px 0 0;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (min-width: 600px) {
+  #full-name,
+  #age,
+  #email {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 520px) {
+  .form-container {
+    padding: 22px 16px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  fieldset:has(.input-checkbox) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   Reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+  }
+}
